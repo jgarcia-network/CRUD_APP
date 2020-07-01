@@ -7,13 +7,15 @@ public class Car {
 	private String make;
 	private String model;
 	private String price;
+	private Boolean sold;
 	
-	public Car(String vin, String year, String make, String model, String price) {
+	public Car(String vin, String year, String make, String model, String price, Boolean sold) {
 		this.setVin(vin);
 		this.setYear(year);
 		this.setMake(make);
 		this.setModel(model);
 		this.setPrice(price);
+		this.setSold(sold);
 	}
 
 	public String getVin() {
@@ -54,5 +56,13 @@ public class Car {
 
 	public void setPrice(String price) {
 		this.price = price;
+	}
+	
+	public Boolean getSold() {
+		return sold;
+	}
+
+	public void setSold(Boolean sold) {
+		this.sold = sold;
 	}
 }

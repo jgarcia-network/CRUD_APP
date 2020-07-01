@@ -6,15 +6,13 @@ public class Order {
 	private String customerId;
 	private String carVin;
 	private String dateOrdered;
-	private String dateDelivered;
 	private String total;
 	
-	public Order(int orderId, String customerId, String carVin, String dateOrdered, String dateDelivered, String total) {
+	public Order(int orderId, String customerId, String carVin, String dateOrdered, String total) {
 		this.setOrderId(orderId);
 		this.setCustomerId(customerId);
 		this.setCarVin(carVin);
 		this.setDateOrdered(dateOrdered);
-		this.setDateDelivered(dateDelivered);
 		this.setTotal(total);
 		
 	}
@@ -49,15 +47,7 @@ public class Order {
 
 	public void setDateOrdered(String dateOrdered) {
 		this.dateOrdered = dateOrdered;
-	}
-	
-	public String getDateDelivered() {
-		return dateDelivered;
-	}
-
-	public void setDateDelivered(String dateDelivered) {
-		this.dateDelivered = dateDelivered;
-	}
+	}	
 	
 	public String getTotal() {
 		return total;
