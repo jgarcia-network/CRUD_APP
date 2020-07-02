@@ -1,0 +1,8 @@
+ALTER TABLE orders
+DROP COLUMN date_delivered;
+
+ALTER TABLE cars
+ADD COLUMN sold bool not null default 0 AFTER price;
+
+UPDATE cars SET sold = false;
+
