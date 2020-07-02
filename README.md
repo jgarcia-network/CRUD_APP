@@ -8,9 +8,13 @@
     ```
     git clone https://github.com/jgarcia-network/CRUD_APP.git
     ```
-1. Install Eclipse IDE for Java and DSL Developers https://www.eclipse.org/downloads/packages/
+1. Install Eclipse IDE for Java and DSL Developers.
     ```
-1. Download MySQL Connector (Choose Platform Independent > Then download the ZIP, extract to wherever is preferable on system) https://dev.mysql.com/downloads/connector
+    https://www.eclipse.org/downloads/packages/
+    ```
+1. Download MySQL Connector (Choose Platform Independent > Then download the ZIP, extract to wherever is preferable on system)
+    ```
+    https://dev.mysql.com/downloads/connector
     ```
 1. In Eclipse, create a new java project (name it and store in preferable location on system).
     ```
