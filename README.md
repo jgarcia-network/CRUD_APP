@@ -27,7 +27,7 @@
     ```
 1. The MySQL connection this project defaults to is username: root password root, if the local system uses a different password, In Eclipse, open the DBConnection.java class file, and type in the password associated with that root connection. Close the DBConnection file.
 
-1. <MORE?> Run script in cars.sql.
+1. Run script in cars.sql through preferred sql editor (Command Line, Termainal, Sql Workbench).
 
 1. Open the Application.java class file > run it > Use the menu on the Eclipse console for further operation.
     ```
