@@ -14,6 +14,7 @@ public class OrderDao {
 	private final String CREATE_ORDER_QUERY = "INSERT INTO orders(customer_id, car_vin, date_ordered, total) VALUES(?, ?, ?, ?)";
 	private final String EDIT_ORDER_QUERY = "UPDATE orders SET customer_id = ?, car_vin = ?, date_ordered = ?, total = ? WHERE id = ?";
 	private final String DELETE_ORDER_QUERY = "DELETE FROM orders WHERE id = ?";
+	private final String GET_ORDER_INFO = "DELETE FROM orders WHERE id = ?";
 	
 	
 	public OrderDao() {

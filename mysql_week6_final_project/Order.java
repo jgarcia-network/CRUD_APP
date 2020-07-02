@@ -13,8 +13,7 @@ public class Order {
 		this.setCustomerId(customerId);
 		this.setCarVin(carVin);
 		this.setDateOrdered(dateOrdered);
-		this.setTotal(total);
-		
+		this.setTotal(total);		
 	}
 
 	public int getOrderId() {

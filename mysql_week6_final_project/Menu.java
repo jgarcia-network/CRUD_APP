@@ -131,7 +131,7 @@ public class Menu {
 		
 		if (carChoice <= cars.size()-1) {
 			orderDao.editOrder(customerId, cars.get(carChoice).getVin(), timestamp.toString(), cars.get(carChoice).getPrice(), id);
-			carDao.soldStatus(false, cars.get(carChoice).getVin());
+			carDao.soldStatus(true, cars.get(carChoice).getVin());
 		}else {
 			System.out.println("Invalid Choice. Try again.\n");
 			createOrder();
