@@ -12,8 +12,8 @@ public class CarDao {
 	private Connection connection;
 	private final String GET_CAR_QUERY = "SELECT * FROM cars";
 	//Should not be hardcoded. What is proper way to do this?
-	private final String SOLD_CARS = "SELECT * FROM cars WHERE sold = 1";
-	private final String UNSOLD_CARS = "SELECT * FROM cars WHERE sold = 0";
+	//private final String SOLD_CARS = "SELECT * FROM cars WHERE sold = 1";
+	//private final String UNSOLD_CARS = "SELECT * FROM cars WHERE sold = 0";
 	private final String SET_SOLD_STATUS_CAR = "UPDATE cars SET sold = ? WHERE vin = ?";
 	
 	
@@ -33,7 +33,7 @@ public class CarDao {
 	}
 	
 	public List<Car> soldCars() throws SQLException{
-		ResultSet rs = connection.prepareStatement(SOLD_CARS).executeQuery();
+		ResultSet rs = connection.prepareStatement(GET_CAR_QUERY).executeQuery();
 		List<Car> cars = new ArrayList<Car>();
 		
 		
@@ -44,7 +44,7 @@ public class CarDao {
 	}
 	
 	public List<Car> unsoldCars() throws SQLException{
-		ResultSet rs = connection.prepareStatement(UNSOLD_CARS).executeQuery();
+		ResultSet rs = connection.prepareStatement(GET_CAR_QUERY).executeQuery();
 		List<Car> cars = new ArrayList<Car>();
 		
 		

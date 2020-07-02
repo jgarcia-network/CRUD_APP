@@ -39,7 +39,7 @@ public class Menu {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-			System.out.println("Press enter to continue....");
+			System.out.println("\nPress enter to continue....");
 			scanner.nextLine();
 			
 		} while (!selection.equals("6"));
@@ -74,7 +74,8 @@ public class Menu {
 		List<Order> orders = orderDao.getOrders();
 		if (!orders.isEmpty()) {
 		for (Order order : orders) {
-		System.out.println("ORDER ID: " + order.getOrderId() + ", CUSTOMER ID: " + order.getCustomerId() + ", CAR VIN: " + order.getCarVin() + ", DATE ORDERED: " + order.getDateOrdered() + "\n");
+		System.out.println("----------------------------------" + "\nORDER ID: " + order.getOrderId() + "\nCUSTOMER NAME: " + order.getFirstName() + " " + order.getLastName() + 
+				"\nVEHICLE MAKE: " + order.getMake() + "\nVEHICLE MODEL: " + order.getModel() + "\nVEHICLE YEAR: " + order.getYear() + "\nVEHICLE TOTAL: $" + order.getTotal() + "\nDATE ORDERED: " + order.getDateOrdered() + "\n----------------------------------");
 		}
 			} else {
 				System.out.println("There are no orders.\n");

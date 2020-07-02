@@ -10,11 +10,11 @@ import java.util.List;
 public class OrderDao {
 
 	private Connection connection;
-	private final String GET_ORDER_QUERY = "SELECT * FROM orders";
+	//private final String GET_ORDER_QUERY = "SELECT * FROM orders";
 	private final String CREATE_ORDER_QUERY = "INSERT INTO orders(customer_id, car_vin, date_ordered, total) VALUES(?, ?, ?, ?)";
 	private final String EDIT_ORDER_QUERY = "UPDATE orders SET customer_id = ?, car_vin = ?, date_ordered = ?, total = ? WHERE id = ?";
 	private final String DELETE_ORDER_QUERY = "DELETE FROM orders WHERE id = ?";
-	private final String GET_ORDER_INFO = "DELETE FROM orders WHERE id = ?";
+	private final String GET_ORDER_INFO = "SELECT o.id, c.first_name, c.last_name, w.make, w.model, w.year, o.date_ordered, o.total FROM customers c INNER JOIN orders o ON c.id = o.customer_id INNER JOIN cars w ON w.vin = o.car_vin";
 	
 	
 	public OrderDao() {
@@ -22,17 +22,17 @@ public class OrderDao {
 	}
 	
 	public List<Order> getOrders() throws SQLException{
-		ResultSet rs = connection.prepareStatement(GET_ORDER_QUERY).executeQuery();
+		ResultSet rs = connection.prepareStatement(GET_ORDER_INFO).executeQuery();
 		List<Order> orders = new ArrayList<Order>();
 		
 		while (rs.next()) {
-			orders.add(populateOrder(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)));
+			orders.add(populateOrder(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8)));
 		}
 		return orders;
 	}
 	
-	private Order populateOrder(int orderId, String customerId, String carVin, String dateOrdered, String total) {
-		return new Order(orderId, customerId, carVin, dateOrdered, total);
+	private Order populateOrder(int orderId, String firstName, String lastName, String make, String model, String year, String dateOrdered, String total) {
+		return new Order(orderId, firstName, lastName, make, model, year, dateOrdered, total);
 	}
 	
 	public void createOrder(String customerId, String carVin, String dateOrdered, String total) throws SQLException {
