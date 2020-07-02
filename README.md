@@ -1,6 +1,3 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](license)
-
-
 # This is a group project that builds cars into orders for purchase. The user can choose to display available vehicles, displaying existing orders, create orders, edit orders, delete orders, and to exit the application.  The application is a Java-based application that references a database via mysql queries embedded in the application.
 
 ---
@@ -33,6 +30,7 @@
     ```
 ---
 
-## License
+## Demo
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+![](./assets/demo.gif)    
+---
