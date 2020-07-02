@@ -32,5 +32,5 @@
 
 ## Demo
 
-![](./assets/demo.gif)    
+![](./mysql_week6_final_project/demo.gif)    
 ---
